@@ -21,11 +21,13 @@
 	<div class="container border-bottom border-dark">
 		<div class="row align-items-start mt-3 p-3 opacity-100">
 		  <div class="col mt-2"><a href="#"><i class="fas fa-calendar fa-3x text-dark"></i></a></div>
-		  <div class="col" align="center"><a href="getBoardList.do"><img src="resources/images/logo.png" alt="logo" width=90px height=90px ></a></div>
+		  <div class="col" align="center"><a href="index.jsp"><img src="resources/images/logo.png" alt="logo" width=90px height=90px ></a></div>
 		  
 		  <div class="col mt-2 text-end"><a href="#"><i class="fas fa-heart fa-3x text-dark"></i></a>
-		  <span class="mx-4"><a href="getUserList.do"><i class="fas fa-user fa-3x text-dark"></i></a></span>
+		  <span class="mx-4"><a href="login.do"><i class="fas fa-user fa-3x text-dark"></i></a></span>
 		  <span><a href="#"><i class="fas fa-search fa-3x text-dark" ></i></a></span>	
+		  
+		  
 		  </div>
 		</div>
 	</div>	
@@ -33,28 +35,27 @@
 
                   <!-- ============banner=============== -->
   
-  <div id="carouselExampleControls" class="carousel slide mt-3 carousel-dark" data-bs-ride="carousel" align="center">
+  <div id="carouselExampleControls" class="carousel carousel-dark slide mt-3" data-bs-ride="carousel" align="center">
+  
+  <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+  
 				  <div class="carousel-inner">
 				        <div class="carousel-item active embed-responsive embed-responsive-4by3 ">
 				          <img src="resources/images/1.png"   class="d-block w-50 card-img-top embed-responsive-item" alt="banner1" width="300" height="600">
 				        </div>
 					    <div class="carousel-item embed-responsive embed-responsive-4by3">
-					      <img src="resources/images/2.png" class="d-block w-50 card-img-top embed-responsive-item" alt="banner2" width="300" height="600">
+					      <img src="resources/images/22.png" class="d-block w-50 card-img-top embed-responsive-item" alt="banner2" width="300" height="600">
 					    </div>
 					    <div class="carousel-item embed-responsive embed-responsive-4by3">
 				          <img src="resources/images/3.png" class="d-block w-50 card-img-top embed-responsive-item" alt="banner3" width="300" height="600">
 				       </div>
 				  </div>
-				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-					    <span class="carousel-control-prev-icon bg-info" aria-hidden="true"></span>
-					    <span class="visually-hidden">Previous</span>
-				  </button>
-				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-					    <span class="carousel-control-next-icon bg-info" aria-hidden="true"></span>
-					    <span class="visually-hidden">Next</span>
-				  </button>
+		
 			</div>
-  
   
 	             <!-- 전체보기 인력 상품 동네 -->
 	<div class="container mt-3 bg-white sticky-top z-index-10">
