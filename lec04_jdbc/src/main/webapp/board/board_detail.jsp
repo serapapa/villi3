@@ -116,7 +116,9 @@
 	    <li class="list-group-item text-start"><p class="fs-3 fw-bold">(${ board.cate })${ board.title }</p>
 	    <p>${ board.cate2 }</p>
 	    <p>${board.regDate}</p>
+	    <br><br><br>
 	    <p class="fs-3 text-center mt-4">${ board.content }</p>
+	    <br><br><br>
 	    <p class="mt-4">조회 : ${ board.cnt }</p>
 	    
 	    </li>

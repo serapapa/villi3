@@ -42,15 +42,15 @@
 		  <div class="row gx-4">
 		       <div class="col">
 		  <select class="form-select form-select-lg mb-3" name="cate" aria-label=".form-select-lg example">
-			  <option selected>게시물선택</option>
+			  <option selected>게시물 카테고리</option>
 			  <option value="상품">상품</option>
 			  <option value="서비스">서비스</option>
 			  <option value="동네">동네</option>
 	     </select>
 	      </div>
 			     <div class="col">
-		<select class="form-select form-select-lg mb-3" name="cate2" >
-			  <option selected>품목선택</option>
+		<select class="form-select form-select-lg mb-3" name="cate2" aria-label=".form-select-lg example">
+			  <option selected>품목 카테고리</option>
 			  <optgroup label="상품대여">
 			  <option value="전자기기">전자기기</option>
 			  <option value="공구용품">공구용품</option>
@@ -72,11 +72,11 @@
 			  <option value="기타">기타</option>
 			  </optgroup>
 			  <optgroup label="동네생활">
-			  <option value="7">분실신고</option>
-			  <option value="8">동네맛집</option>
-			  <option value="9">혼술/혼밥</option>
-			  <option value="10">동네행사</option>
-			  <option value="111">잡담</option>
+			  <option value="분실신고">분실신고</option>
+			  <option value="동네맛집">동네맛집</option>
+			  <option value="혼술/혼밥">혼술/혼밥</option>
+			  <option value="동네행사">동네행사</option>
+			  <option value="잡담">잡담</option>
 			  </optgroup>
 	     </select>
 			    </div>
@@ -85,16 +85,16 @@
 	
 	<div class="container mt-3" align="center">
 		<div class="input-group mb-3">
-  				<span class="input-group-text" id="desc_title"><i class="fas fa-user"></i></span>
-  				<input type="text" class="form-control" name="writer" placeholder="글 작성자....">
+  				<span class="input-group-text"><i class="fas fa-user"></i></span>
+  				<input type="text" class="form-control" name="writer" id="writer" placeholder="글 작성자....">
 			</div>
 			<div class="input-group mb-3">
-  				<span class="input-group-text" id="desc_title"><i class="fas fa-address-book"></i></span>
-  				<input type="text" class="form-control" name="title" placeholder="글 제목....">
+  				<span class="input-group-text"><i class="fas fa-address-book"></i></span>
+  				<input type="text" class="form-control" name="title" id="title"  placeholder="글 제목....">
 			</div>
 			<div class="input-group mb-3">
 			  <span class="input-group-text"><i class="fas fa-clipboard"></i></span>
-			  <textarea class="form-control"  name="content" rows="20" placeholder="글 상세내용...."></textarea>
+			  <textarea class="form-control"  name="content" id="content"  rows="20" placeholder="글 상세내용...."></textarea>
 			</div>	
 			
 			

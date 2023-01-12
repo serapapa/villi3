@@ -35,7 +35,6 @@ public class BoardDAO {
 	private String selectBoardListByTitle = ""; 
 	private String selectBoardListByWriter = ""; 
 	private String selectBoardListByCate = ""; 
-	private String update_reviewcnt  = ""; //update board set cnt = cnt + 1 where seq = ?
 
 	@PostConstruct
 	public void getSqlPropeties() {
@@ -48,7 +47,6 @@ public class BoardDAO {
 		selectBoardListByTitle   = environment.getProperty("selectBoardListByTitle");
 		selectBoardListByWriter  = environment.getProperty("selectBoardListByWriter");
 		selectBoardListByCate = environment.getProperty("selectBoardListByCate");
-		update_reviewcnt  = environment.getProperty("update_reviewcnt");
 	}
 //	
 //	public List<BoardVO> getBoardList(int currentPage, int perPage) {		
@@ -101,8 +99,8 @@ public class BoardDAO {
 	}
 
 	public int insertBoard(BoardVO board) {
-		return jdbcTemplate.update(insert_board, board.getTitle(), board.getContent(), board.getWriter(), board.getFileName1(),board.getFileName2()
-				                   ,board.getFileName3(), board.getFileName4(), board.getFileName5(), board.getCate());
+		return jdbcTemplate.update(insert_board, board.getTitle(), board.getWriter(), board.getContent(), board.getFileName1(),board.getFileName2()
+				                   ,board.getFileName3(), board.getFileName4(), board.getFileName5(), board.getCate(), board.getCate2());
 	}
 
 	public int deleteBoard(BoardVO board) {

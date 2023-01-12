@@ -87,7 +87,6 @@ public PageInfo getPageInfo(String tableName, int currentPage, int perPage) {
 		return jdbcTemplate.queryForInt(sql);
 	}
 	
-
 }
 
 
