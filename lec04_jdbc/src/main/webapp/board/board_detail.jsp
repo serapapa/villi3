@@ -5,13 +5,17 @@
 <head>
 	<title>Spring Framework</title>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" 
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" 
 		crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>	
+
+
 </head>
+
 
 <body class="bg-light">
                   <!-- ===========header================ -->
@@ -47,30 +51,30 @@
 				 
 				        <div class="carousel-item active embed-responsive embed-responsive-4by3" data-bs-interval="10000">	        	
                          <c:if test="${ !empty  board.fileName1}">	
-				         <img src="resources/images/${ board.fileName1 }"   class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				         <img src="resources/images/${ board.fileName1 }"   class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>	
 				     	  <c:if test="${ empty  board.fileName1}">
-				     	 <img src="resources/images/noimg.png"  class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				     	 <img src="resources/images/noimg.png"  class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>              
 				        </div>
 				        
 				        
 					    <div class="carousel-item embed-responsive embed-responsive-4by3" data-bs-interval="2000">
 				         <c:if test="${ !empty  board.fileName2}">	
-				         <img src="resources/images/${ board.fileName2 }"   class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				         <img src="resources/images/${ board.fileName2 }"   class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>	
 				     	  <c:if test="${ empty  board.fileName2}">
-				     	 <img src="resources/images/noimg.png"  class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				     	 <img src="resources/images/noimg.png"  class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>
 				        </div>	       
 				        
 				                   
 					    <div class="carousel-item embed-responsive embed-responsive-4by3" >
 				         <c:if test="${ !empty  board.fileName3}">	
-				         <img src="resources/images/${ board.fileName3 }"   class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				         <img src="resources/images/${ board.fileName3 }"   class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>	
 				     	  <c:if test="${ empty  board.fileName3}">
-				     	 <img src="resources/images/noimg.png"  class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				     	 <img src="resources/images/noimg.png"  class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>
 				        </div>	
 				        
@@ -78,20 +82,20 @@
 				        
 					    <div class="carousel-item embed-responsive embed-responsive-4by3" >
 				         <c:if test="${ !empty  board.fileName4}">	
-				         <img src="resources/images/${ board.fileName4}"   class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				         <img src="resources/images/${ board.fileName4}"   class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>	
 				     	  <c:if test="${ empty  board.fileName4}">
-				     	 <img src="resources/images/noimg.png"  class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				     	 <img src="resources/images/noimg.png"  class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>
 				        </div>	
 				        
 				        
 					    <div class="carousel-item embed-responsive embed-responsive-4by3" >
 				           <c:if test="${ !empty  board.fileName5}">	
-				         <img src="resources/images/${ board.fileName5}"   class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				         <img src="resources/images/${ board.fileName5}"   class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>	
 				     	  <c:if test="${ empty  board.fileName5}">
-				     	 <img src="resources/images/noimg.png"  class="d-block w-75 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				     	 <img src="resources/images/noimg.png"  class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>
 				        </div>
 				  </div>
@@ -106,16 +110,19 @@
 	  <div class="card-body">
 	    <h5 class="card-title text-start">
 	    <img src="resources/images/noimg.png" class="rounded-circle border border-dark" alt="img" width="75" height="75">
+	   <span class="col-md-auto text-success fw-bold">
+			${board.status}
+		</span>
 	   <span>${ board.writer }</span> 
-	   <span class="fs-6 bg-warning text-white rounded-pill">회원등급</span>
+	   <span class="fs-5"><i class="bi bi-award text-warning"></i></span>
+
 <!-- 	   <p class="fs-4 bg-secondary text-end">대여중</p>    -->
 	    </h5>
 	    
 	  </div>
 	  <ul class="list-group list-group-flush">
 	    <li class="list-group-item text-start"><p class="fs-3 fw-bold">(${ board.cate })${ board.title }</p>
-	    <p>${ board.cate2 }</p>
-	    <p>${board.regDate}</p>
+	    <p class="fs-6 fst-italic">${ board.cate2 } · ${board.regDate}</p>
 	    <br><br><br>
 	    <p class="fs-3 text-center mt-4">${ board.content }</p>
 	    <br><br><br>

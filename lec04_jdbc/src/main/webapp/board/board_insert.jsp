@@ -76,6 +76,10 @@
 			  <option value="동네맛집">동네맛집</option>
 			  <option value="혼술/혼밥">혼술/혼밥</option>
 			  <option value="동네행사">동네행사</option>
+			  <option value="동네질문">동네질문</option>
+			  <option value="취미생활">취미생활</option>
+			  <option value="일상">일상</option>
+			  <option value="모임">모임</option>
 			  <option value="잡담">잡담</option>
 			  </optgroup>
 	     </select>

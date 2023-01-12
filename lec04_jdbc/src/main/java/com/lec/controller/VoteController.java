@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.lec.jdbc.commom.SearchVO;
 import com.lec.jdbc.service.VoteService;
@@ -29,6 +30,7 @@ public class VoteController {
 		return "vote/vote_list.jsp";
 	}
 	
+	
 	@RequestMapping("*/insertVote.do")
 	public String insertVote(VoteVO vote, VoteItemVO voteitem) {
 		voteService.insertVote(vote, voteitem);
@@ -36,12 +38,14 @@ public class VoteController {
 	}
 	
 	
-	@RequestMapping("/getVote.do")
+	@RequestMapping(value="/getVote.do", method=RequestMethod.GET)
 	public String getVote(VoteVO vote, Model model) {	
+		
 		model.addAttribute("vote", voteService.getVote(vote)); // Model 정보 저장
 		return "vote/vote_detail.jsp"; // View 이름 리턴
 	}	
 	
+
 	
 	/* ----------------------------------------------------------------------- */	
 	//@RequestMapping("getvoteList.do") 

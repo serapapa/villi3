@@ -73,31 +73,31 @@ public class BoardController {
 		MultipartFile uploadFile1 = board.getUploadFile1();
 		if (!uploadFile1.isEmpty()) {
 			String fileName = uploadFile1.getOriginalFilename();
-			uploadFile1.transferTo(new File("d:/lec03/99.temp/upload/" + fileName));
+			uploadFile1.transferTo(new File("C:/Users/ezen/Documents/GitHub/villi3/lec04_jdbc/src/main/webapp/resources/images/" + fileName));
 			board.setFileName1(fileName);
 		}	
 		MultipartFile uploadFile2 = board.getUploadFile2();
 		if (!uploadFile2.isEmpty()) {
 			String fileName = uploadFile2.getOriginalFilename();
-			uploadFile2.transferTo(new File("d:/lec03/99.temp/upload/" + fileName));
+			uploadFile2.transferTo(new File("C:/Users/ezen/Documents/GitHub/villi3/lec04_jdbc/src/main/webapp/resources/images/" + fileName));
 			board.setFileName2(fileName);
 		}	
 		MultipartFile uploadFile3 = board.getUploadFile3();
 		if (!uploadFile3.isEmpty()) {
 			String fileName = uploadFile3.getOriginalFilename();
-			uploadFile3.transferTo(new File("d:/lec03/99.temp/upload/" + fileName));
+			uploadFile3.transferTo(new File("C:/Users/ezen/Documents/GitHub/villi3/lec04_jdbc/src/main/webapp/resources/images/" + fileName));
 			board.setFileName3(fileName);
 		}	
 		MultipartFile uploadFile4 = board.getUploadFile4();
 		if (!uploadFile4.isEmpty()) {
 			String fileName = uploadFile4.getOriginalFilename();
-			uploadFile4.transferTo(new File("d:/lec03/99.temp/upload/" + fileName));
+			uploadFile4.transferTo(new File("C:/Users/ezen/Documents/GitHub/villi3/lec04_jdbc/src/main/webapp/resources/images/" + fileName));
 			board.setFileName4(fileName);
 		}	
 		MultipartFile uploadFile5 = board.getUploadFile5();
 		if (!uploadFile5.isEmpty()) {
 			String fileName = uploadFile5.getOriginalFilename();
-			uploadFile5.transferTo(new File("d:/lec03/99.temp/upload/" + fileName));
+			uploadFile5.transferTo(new File("C:/Users/ezen/Documents/GitHub/villi3/lec04_jdbc/src/main/webapp/resources/images/" + fileName));
 			board.setFileName5(fileName);
 		}	
 		boardService.insertBoard(board);
@@ -107,7 +107,6 @@ public class BoardController {
 	@RequestMapping(value="/getBoard.do", method=RequestMethod.GET)
 	public String getBoard(@RequestParam int seq, BoardVO board, Model model) {	
 		
-//		model.addAttribute("board", boardService.updateReviewcnt(board)); // Model 정보 저장
 		model.addAttribute("board", boardService.getBoard(board)); // Model 정보 저장
 		boardService.updateCnt(seq);
 		return "board/board_detail.jsp"; // View 이름 리턴

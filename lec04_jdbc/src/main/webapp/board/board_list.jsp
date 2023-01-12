@@ -17,8 +17,8 @@
 </head>
 <body>
                   <!-- ===========header================ -->
- <header>
-	<div class="container border-bottom border-dark">
+ <header class= "border-bottom border-dark">
+	<div class="container">
 		<div class="row align-items-start mt-3 p-3 opacity-100">
 		  <div class="col mt-2"><a href="#"><i class="fas fa-calendar fa-3x text-dark"></i></a></div>
 		  <div class="col" align="center"><a href="getBoardList.do"><img src="resources/images/logo.png" alt="logo" width=90px height=90px ></a></div>
@@ -38,7 +38,7 @@
 
                   <!-- ============banner=============== -->
   
-  <div id="carouselExampleControls" class="carousel carousel-dark slide mt-3" data-bs-ride="carousel" align="center">
+  <div id="carouselExampleControls" class="carousel carousel-dark slide mt-3  border-bottom border-dark" data-bs-ride="carousel" align="center">
   
 				  <div class="carousel-indicators">
 				    <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -46,7 +46,7 @@
 				    <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2" aria-label="Slide 3"></button>
 				  </div>
 				  <div class="carousel-inner">
-				        <div class="carousel-item active embed-responsive embed-responsive-4by3 ">
+				        <div class="carousel-item active embed-responsive embed-responsive-4by3">
 				          <img src="resources/images/1.png"   class="d-block w-50 card-img-top embed-responsive-item" alt="banner1" width="300" height="600">
 				        </div>
 					    <div class="carousel-item embed-responsive embed-responsive-4by3">
@@ -60,8 +60,10 @@
   
   
 	             <!-- 전체보기 인력 상품 동네 -->
-	<div class="container bg-white sticky-top z-index-10">
-	  <div class="row border-bottom border-dark border-top border-dark mt-3 p-3">
+	             
+   <section class="border-bottom border-dark bg-white sticky-top z-index-10">            
+	<div class="container">
+	  <div class="row p-3">
 		 <div class="col" align="right">
 		     <!-- ============search=============== -->
               <form action="getBoardList.do" method="post" id="boardForm"> 
@@ -74,8 +76,7 @@
 				    	<option value="">검색</option>		
 				    	<option value="title" ${searchVO.getSearchType()=="title" ? "selected" : ""}>제목</option>							
 				    	<option value="writer" ${searchVO.getSearchType()=="writer" ? "selected" : "" }>작성자</option>							
-				    	<option value="cate" ${searchVO.getSearchType()=="cate" ? "selected" : ""}>카테고리</option>						
-					
+				    	<option value="cate" ${searchVO.getSearchType()=="cate" ? "selected" : ""}>카테고리</option>										
 					</select>
 				    </div>
 				    <div class="col-md-auto">
@@ -88,17 +89,16 @@
 				 </div>
 				</form>	      
 		 </div>
+		 	              <!-- ================글작성버튼============= -->
 		 <div class="col" align="right">
-		   <a href="getVoteList.do" class="btn btn-success rounded-circle">동네투표</a>
+		   <a href="getVoteList.do" class="btn btn-warning rounded-pill mr-3 text-white">동네투표</a>
+		   <a href="board/board_insert.jsp" class="btn btn-warning rounded-pill text-white" >글작성</a>
 		 </div>
-	  </div>
-	 	
+	  </div> 	
+    </div>
+  </section> 
+  
 
-	              <!-- ================글작성버튼============= -->
-  		<div class="container-lg mt-10 bg-white" align="right">
-	     <a href="board/board_insert.jsp" class="w-20 p-3 col-1 mt-3 btn btn-secondary">글작성</a>
-	 	</div>
-  </div>
   
              <!-- =========상품보기=============== -->
               <!-- ======================LIST========================= -->
@@ -124,8 +124,25 @@
 			     <td align="center"><img src="resources/images/noimg.png"  class="d-block w-50 card-img-top embed-responsive-item border border-dark mt-3" alt="img"  width="350" height="350">
 			     </c:if>
 				 
-				 
-		         <a href="getBoard.do?seq=${ board.seq}"><h4>(${board.cate})${board.title}</h4></a>  <h5>${board.writer} / ${board.regDate}</h5></td>
+				 <div class="badge text-wrap" style="width: 20rem;">
+				  <a href="getBoard.do?seq=${ board.seq}" style="text-decoration:none">
+				   <p class="fs-3">(${board.cate})${board.title}</p>
+				  </a> 
+                 </div>	   
+	            <div class="container">
+	                 <div class="row justify-content-md-center">
+					    <div class="col-md-auto">
+					      작성자 : ${board.writer}
+					    </div>
+					    
+					    <div class="col-md-auto bg-success text-white">
+					      ${board.status}
+					    </div>
+				    </div>
+			    </div>
+			     <p class="fs-6">등록일 : ${board.regDate}</p>
+		        </td>
+		        
 		    <c:if test="${i%j == j-1}">
 		     </tr>
 		    </c:if> 
@@ -142,8 +159,8 @@
 		 </div>
     </div>
     
-
-	                 <!-- =======================LIST 끝========================== -->         
+		
+		 <!-- =======================LIST 끝========================== -->         
 
 
 			  <!--====== admin일경우 사용자관리 및 신고글관리============  -->
