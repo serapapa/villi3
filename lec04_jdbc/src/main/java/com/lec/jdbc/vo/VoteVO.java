@@ -4,105 +4,63 @@ import java.util.Date;
 
 public class VoteVO {
 
-	private String v_title;
-	private Date v_etime;
-	private String v_con;
-	private String v_item1;
-	private String v_count1;
-	private String v_item2;
-	private String v_count2;
-	private String v_item3;
-	private String v_count3;
-	private String v_item4;
-	private String v_count4;
-	private String v_item1Pic;
-	private int v_id;
-	
 
-	public String getV_item1Pic() {
-		return v_item1Pic;
+	
+	private String id;
+	private String question;
+	private Date v_date;
+	private int listnum;
+	private int itemnum;
+	private String item;
+	private int cnum;
+	
+	public String getId() {
+		return id;
 	}
-	public void setV_item1Pic(String v_item1Pic) {
-		this.v_item1Pic = v_item1Pic;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getV_item3() {
-		return v_item3;
+	public String getQuestion() {
+		return question;
 	}
-	public void setV_item3(String v_item3) {
-		this.v_item3 = v_item3;
+	public void setQuestion(String question) {
+		this.question = question;
 	}
-	public String getV_count3() {
-		return v_count3;
+	public Date getV_date() {
+		return v_date;
 	}
-	public void setV_count3(String v_count3) {
-		this.v_count3 = v_count3;
+	public void setV_date(Date v_date) {
+		this.v_date = v_date;
 	}
-	public String getV_item4() {
-		return v_item4;
+	public int getListnum() {
+		return listnum;
 	}
-	public void setV_item4(String v_item4) {
-		this.v_item4 = v_item4;
+	public void setListnum(int listnum) {
+		this.listnum = listnum;
 	}
-	public String getV_count4() {
-		return v_count4;
+	public int getItemnum() {
+		return itemnum;
 	}
-	public void setV_count4(String v_count4) {
-		this.v_count4 = v_count4;
+	public void setItemnum(int itemnum) {
+		this.itemnum = itemnum;
 	}
-	public String getV_title() {
-		return v_title;
+	public String getItem() {
+		return item;
 	}
-	public void setV_title(String v_title) {
-		this.v_title = v_title;
+	public void setItem(String item) {
+		this.item = item;
 	}
-	public Date getV_etime() {
-		return v_etime;
+	public int getCnum() {
+		return cnum;
 	}
-	public void setV_etime(Date v_etime) {
-		this.v_etime = v_etime;
-	}
-	public String getV_con() {
-		return v_con;
-	}
-	public void setV_con(String v_con) {
-		this.v_con = v_con;
-	}
-	public String getV_item1() {
-		return v_item1;
-	}
-	public void setV_item1(String v_item1) {
-		this.v_item1 = v_item1;
-	}
-	public String getV_count1() {
-		return v_count1;
-	}
-	public void setV_count1(String v_count1) {
-		this.v_count1 = v_count1;
-	}
-	public String getV_item2() {
-		return v_item2;
-	}
-	public void setV_item2(String v_item2) {
-		this.v_item2 = v_item2;
-	}
-	public String getV_count2() {
-		return v_count2;
-	}
-	public void setV_count2(String v_count2) {
-		this.v_count2 = v_count2;
-	}
-	public int getV_id() {
-		return v_id;
-	}
-	public void setV_id(int v_id) {
-		this.v_id = v_id;
+	public void setCnum(int cnum) {
+		this.cnum = cnum;
 	}
 	@Override
 	public String toString() {
-		return "VoteVO [v_title=" + v_title + ", v_etime=" + v_etime + ", v_con=" + v_con + ", v_item1=" + v_item1
-				+ ", v_count1=" + v_count1 + ", v_item2=" + v_item2 + ", v_count2=" + v_count2 + ", v_item3=" + v_item3
-				+ ", v_count3=" + v_count3 + ", v_item4=" + v_item4 + ", v_count4=" + v_count4 + ", v_item1Pic="
-				+ v_item1Pic + ", v_id=" + v_id + "]";
+		return "VoteVO [id=" + id + ", question=" + question + ", v_date=" + v_date + ", listnum=" + listnum
+				+ ", itemnum=" + itemnum + ", item=" + item + ", cnum=" + cnum + "]";
 	}
 
+	
 }

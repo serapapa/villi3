@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 
 import com.lec.jdbc.commom.SearchVO;
 import com.lec.jdbc.mapper.VoteRowMapper;
+import com.lec.jdbc.vo.BoardVO;
 import com.lec.jdbc.vo.PageInfo;
-import com.lec.jdbc.vo.VoteItemVO;
 import com.lec.jdbc.vo.VoteVO;
 
 
@@ -22,22 +22,20 @@ public class VoteDAO {
 
 	@Autowired                    
 	private JdbcTemplate jdbcTemplate;
-	
 	private String sql = "";
-	private String insert_vote = "insert into vote(v_title,v_con,v_etime) values(?,?,now())";
-	private String insert_voteitem = "insert into voteitem(listnum, item) values(?,?)";
+	private String insert_vote = "insert into vote(question, v_date) values(?,now())";
+	private String insert_voteitem = "insert into voteitem(listnum, itemnum, item) values(?,?,?)";
 	private String get_pageinfo = "select count(*) from vote";
-	private String get_vote = "select * from vote where v_id=?";
-	private String get_vote_list = "select * from vote order by v_id desc limit ?, ?";
+	private String get_vote = "select * from vote where id=?";
+	private String get_vote_list = "select * from vote order by id desc limit ?, ?";
 //	private String get_vote_vote = "update vote set v_count1=? where v_id=? and v_item=?";
 	
-
 	public List<VoteVO> getVoteList(int currentPage, int perPage) {
 		Object[] args = {(currentPage-1)*perPage, perPage};
 		return jdbcTemplate.query(get_vote_list, args, new VoteRowMapper());
 	}
 	public VoteVO getVote(VoteVO vote) {
-		Object[] args = {vote.getV_id() };
+		Object[] args = {vote.getId() };
 		return jdbcTemplate.queryForObject(get_vote, args, new VoteRowMapper());
 	}
 
@@ -74,10 +72,9 @@ public PageInfo getPageInfo(String tableName, int currentPage, int perPage) {
 		return pageInfo;
 	}
 
-	public int insertVote(VoteVO vote, VoteItemVO voteitem) {
-		return jdbcTemplate.update(insert_vote, vote.getV_con(), vote.getV_title(), insert_voteitem, voteitem.getItem(), voteitem.getListnum());		
-	}
-	
+	public int insertVote(VoteVO vote) {
+		return jdbcTemplate.update(insert_vote, vote.getQuestion(), insert_voteitem, vote.getItem(), vote.getListnum(), vote.getItemnum());		
+	}	
 	public int getTotalRowCount(SearchVO searchVO) {
 		sql = "select count(*) from vote where 1 = 1 "
 			    + " and "      + searchVO.getSearchCategory() 

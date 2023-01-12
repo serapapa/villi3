@@ -39,9 +39,9 @@
 				<tbody>
 				<c:forEach  var="vote" items="${ voteList }">
 					<tr>
-						<td> <a href="getVote.do?v_id=${ vote.v_id }">${ vote.v_id }</a></td>
-						<td>${ vote.v_title }</td>
-						<td>${ vote.v_etime }</td>
+						<td> <a href="getVote.do?id=${ vote.id }">${ vote.id }</a></td>
+						<td>${ vote.question }</td>
+						<td>${ vote.v_date }</td>
 					</tr>
 				</c:forEach>				
 				</tbody>

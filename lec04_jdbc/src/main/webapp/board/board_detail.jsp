@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Spring Framework</title>
+	<title>게시글 상세보기</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">	
@@ -19,8 +19,8 @@
 
 <body class="bg-light">
                   <!-- ===========header================ -->
- <header>
-	<div class="container border-bottom border-dark">
+ <header class="border-bottom border-dark">
+	<div class="container">
 		<div class="row align-items-start mt-3 p-3 opacity-100">
 		  <div class="col mt-2"><a href="#"><i class="fas fa-calendar fa-3x text-dark"></i></a></div>
 		  <div class="col" align="center"><a href="getBoardList.do"><img src="resources/images/logo.png" alt="logo" width=90px height=90px ></a></div>
@@ -35,7 +35,7 @@
 
           <!-- 이미지 -->   
 	<div class="container-lg" >
-		<div class="border-bottom border-dark p-3 " align="center">
+		<div class="p-3 " align="center">
                                   <!-- 이미지 -->                                    
 	            <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
 	              <div class="carousel-indicators">
@@ -51,7 +51,7 @@
 				 
 				        <div class="carousel-item active embed-responsive embed-responsive-4by3" data-bs-interval="10000">	        	
                          <c:if test="${ !empty  board.fileName1}">	
-				         <img src="resources/images/${ board.fileName1 }"   class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
+				         <img src="resources/images/${ board.fileName1 }"  class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
 				         </c:if>	
 				     	  <c:if test="${ empty  board.fileName1}">
 				     	 <img src="resources/images/noimg.png"  class="d-block w-50 card-img-top embed-responsive-item" alt="img" width="500" height="500">
@@ -103,7 +103,8 @@
 		</div>
 	</div> 
 </div>
-	
+
+                                       <!-- form -->
 	<div class="container" align="center">
 		<form action="updateBoard.do" method="post">			
 	<div class="card">
@@ -124,7 +125,7 @@
 	    <li class="list-group-item text-start"><p class="fs-3 fw-bold">(${ board.cate })${ board.title }</p>
 	    <p class="fs-6 fst-italic">${ board.cate2 } · ${board.regDate}</p>
 	    <br><br><br>
-	    <p class="fs-3 text-center mt-4">${ board.content }</p>
+	    <p class="fs-3 mt-4">${ board.content }</p>
 	    <br><br><br>
 	    <p class="mt-4">조회 : ${ board.cnt }</p>
 	    
@@ -132,31 +133,20 @@
 	    <li class="list-group-item text-start"><a href="report/report_insert.jsp" class="btn btn-danger">이 게시글 신고하기</a></li>
 	  </ul>
 	  <div class="card-body">	
-		    <input type="submit" class="btn btn-primary" value="글수정" />
+<!-- 		    <input type="submit" class="btn btn-primary" value="글수정" /> -->
 <!-- 		<a href="board/board_insert.jsp" class="btn btn-primary">글등록</a> -->
-			<a href="getBoardList.do" class="btn btn-primary">글목록</a>
-			<a href="#" class="btn btn-danger"  onclick="deleteBoard()">글삭제</a>
+<!-- 			<a href="getBoardList.do" class="btn btn-primary">글목록</a> -->
+<!-- 			<a href="#" class="btn btn-danger"  onclick="deleteBoard()">글삭제</a> -->
+         <div class="col text-end" align="center">
+		   <a href="#" class="btn boarder border-dark fs-4 fw-bold"">채팅하기</a>
+		 </div>
 	  </div>
 	</div>
 		</form>			
-	</div>
-<div class="container bg-white z-index-10">
-	  <div class="row border-bottom border-dark border-top border-dark mt-3 p-3" > 
-		 <div class="col" align="center">
-            
-		 </div>
-		 <div class="col" align="center">
-		    
-		 </div>
-		 <div class="col" align="center">
-		    
-		 </div>
-		 <div class="col text-end" align="center">
-		   <a href="#" class="btn btn-info">채팅하기</a>
-		 </div>
-	  </div>
-</div>
+	</div>	
 
+
+<!-- 삭제시 confirm -->
 	<script>
 		function deleteBoard() {
 			if(confirm("자료를 삭제하겠습니까?")) {

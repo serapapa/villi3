@@ -157,10 +157,8 @@
                    <!-- 체크된 값 -->
     <hr>
        <input type ="text" id="sumtext" value="체크하시오" name="">
-	   <button type="button" class="btn btn-success" onclick= "this.value">투표하기</button>
+	   <button type="button" id="vote" class="btn btn-success"  onclick="alert(투표성공')">투표하기</button>
 	</div>
-	
-	
 	
 	
 	<div class="container mt-5" align="center">

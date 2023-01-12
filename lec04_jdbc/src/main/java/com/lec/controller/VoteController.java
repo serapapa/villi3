@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.lec.jdbc.commom.SearchVO;
 import com.lec.jdbc.service.VoteService;
-import com.lec.jdbc.vo.BoardVO;
 import com.lec.jdbc.vo.PageInfo;
-import com.lec.jdbc.vo.VoteItemVO;
 import com.lec.jdbc.vo.VoteVO;
 
 @Controller
@@ -30,10 +28,18 @@ public class VoteController {
 		return "vote/vote_list.jsp";
 	}
 	
+//	@RequestMapping(value="/getBoard.do", method=RequestMethod.GET)
+//	public String getBoard(@RequestParam int seq, BoardVO board, Model model) {	
+//		
+//		model.addAttribute("board", boardService.getBoard(board)); // Model 정보 저장
+//		boardService.updateCnt(seq);
+//		return "board/board_detail.jsp"; // View 이름 리턴
+//	}	
+	
 	
 	@RequestMapping("*/insertVote.do")
-	public String insertVote(VoteVO vote, VoteItemVO voteitem) {
-		voteService.insertVote(vote, voteitem);
+	public String insertVote(VoteVO vote) {
+		voteService.insertVote(vote);
 		return "redirect:/getVoteList.do";
 	}
 	
@@ -44,9 +50,7 @@ public class VoteController {
 		model.addAttribute("vote", voteService.getVote(vote)); // Model 정보 저장
 		return "vote/vote_detail.jsp"; // View 이름 리턴
 	}	
-	
 
-	
 	/* ----------------------------------------------------------------------- */	
 	//@RequestMapping("getvoteList.do") 
 	public String getVoteList(VoteVO voteVO, SearchVO searchVO, Model model) {	

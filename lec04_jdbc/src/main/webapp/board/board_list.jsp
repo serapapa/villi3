@@ -14,6 +14,19 @@
 		crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>	
+
+<style>
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+font-family: 'Pretendard-Regular';}
+
+</style>
 </head>
 <body>
                   <!-- ===========header================ -->
@@ -38,7 +51,7 @@
 
                   <!-- ============banner=============== -->
   
-  <div id="carouselExampleControls" class="carousel carousel-dark slide mt-3  border-bottom border-dark" data-bs-ride="carousel" align="center">
+  <div id="carouselExampleControls" class="carousel carousel-dark slide border-bottom border-dark" data-bs-ride="carousel" align="center">
   
 				  <div class="carousel-indicators">
 				    <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -56,22 +69,36 @@
 				          <img src="resources/images/3.png" class="d-block w-50 card-img-top embed-responsive-item" alt="banner3" width="300" height="600">
 				       </div>
 				  </div>
-			</div>
-  
-  
-	             <!-- 전체보기 인력 상품 동네 -->
-	             
+			</div>      
+	     		 <!-- ============search=============== -->	 		            
    <section class="border-bottom border-dark bg-white sticky-top z-index-10">            
-	<div class="container">
+	<div class="container"  align="center">
 	  <div class="row p-3">
-		 <div class="col" align="right">
-		     <!-- ============search=============== -->
-              <form action="getBoardList.do" method="post" id="boardForm"> 
+		 <div class="col"> 
+
+		 <nav class="navbar navbar-expand-lg navbar-light">
+		   <div class="container-fluid">
+		    <a class="navbar-brand" href="#">Navbar</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    		 
+		 	              <!-- ================글작성버튼============= -->
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" href="board/board_insert.jsp">글작성</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="getVoteList.do">동네투표</a>
+		        </li>
+		      </ul>      
+		      <form action="getBoardList.do" method="post" id="boardForm"> 
                <input type="hidden" id="curPage" name="curPage" value="${searchVO.getCurPage()}"> 
 			   <input type="hidden" id="rowSizePerPage" name="rowSizePerPage" value="${searchVO.getRowSizePerPage()}">
                   <div class="container" >
 				   <div class="row justify-content-md">
-				    <div class="col col-lg-15">
+				    <div class="col-md-auto">
 				      <select class="form-select" id="searchType" name="searchType">
 				    	<option value="">검색</option>		
 				    	<option value="title" ${searchVO.getSearchType()=="title" ? "selected" : ""}>제목</option>							
@@ -79,22 +106,20 @@
 				    	<option value="cate" ${searchVO.getSearchType()=="cate" ? "selected" : ""}>카테고리</option>										
 					</select>
 				    </div>
-				    <div class="col-md-auto">
+				    <div class="col col-lg-6">
 				      <input class="form-control" name="searchWord" type="text" />
 				    </div>
 				    <div class="col col-lg-2">
-				     <input type="submit" class="btn btn-dark"  value=" Search ">
+				     <button class="btn btn-outline-success" type="submit">Search</button>
 				    </div>
 				  </div>
 				 </div>
-				</form>	      
-		 </div>
-		 	              <!-- ================글작성버튼============= -->
-		 <div class="col" align="right">
-		   <a href="getVoteList.do" class="btn btn-warning rounded-pill mr-3 text-white">동네투표</a>
-		   <a href="board/board_insert.jsp" class="btn btn-warning rounded-pill text-white" >글작성</a>
-		 </div>
+				</form>	
+		    </div>
+		  </div>
+		</nav> 
 	  </div> 	
+    </div>
     </div>
   </section> 
   
@@ -125,9 +150,9 @@
 			     </c:if>
 				 
 				 <div class="badge text-wrap" style="width: 20rem;">
-				  <a href="getBoard.do?seq=${ board.seq}" style="text-decoration:none">
-				   <p class="fs-3">(${board.cate})${board.title}</p>
-				  </a> 
+				   <a href="getBoard.do?seq=${board.seq}" style="text-decoration:none">
+				    <div class="fs-3">(${board.cate})${board.title}</div>
+				   </a> 
                  </div>	   
 	            <div class="container">
 	                 <div class="row justify-content-md-center">

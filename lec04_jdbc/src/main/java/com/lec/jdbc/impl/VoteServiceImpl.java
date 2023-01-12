@@ -10,7 +10,6 @@ import com.lec.jdbc.commom.SearchVO;
 import com.lec.jdbc.dao.VoteDAO;
 import com.lec.jdbc.service.VoteService;
 import com.lec.jdbc.vo.PageInfo;
-import com.lec.jdbc.vo.VoteItemVO;
 import com.lec.jdbc.vo.VoteVO;
 
 
@@ -19,10 +18,7 @@ public class VoteServiceImpl implements VoteService {
 	
 	@Autowired
 	private VoteDAO VoteDAO;
-	@Override
-	public int insertVote(VoteVO vote, VoteItemVO voteitem) {
-		return VoteDAO.insertVote(vote, voteitem);
-	}
+
 	@Override
 	public VoteVO getVote(VoteVO vote) {
 		return VoteDAO.getVote(vote);
@@ -47,6 +43,11 @@ public class VoteServiceImpl implements VoteService {
 	@Override
 	public int getTotalRowCount(SearchVO searchVO) {
 		return VoteDAO.getTotalRowCount(searchVO);
+	}
+	@Override
+	public int insertVote(VoteVO vote) {
+		return VoteDAO.insertVote(vote);
+		
 	}
 	
 	

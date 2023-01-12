@@ -44,7 +44,7 @@
 <!-- 			</div> -->
 			<div class="input-group mb-3">
   				<span class="input-group-text"><i class="fas fa-address-book"></i></span>
-  				<input type="text" class="form-control" name="v_title" placeholder="글 제목....">
+  				<input type="text" class="form-control" name="question" placeholder="질문">
 			</div>
 			<div class="input-group mb-3">
   				<span class="input-group-text"><i class="fas fa-address-book"></i></span>
@@ -52,13 +52,12 @@
 			</div>
 			<div class="input-group mb-3">
   				<span class="input-group-text"><i class="fas fa-address-book"></i></span>
-  				<input type="text" class="form-control" name="listnum" placeholder="listnum">
+  				<input type="text" class="form-control" name="listnum" placeholder="리스트번호">
 			</div>
 			<div class="input-group mb-3">
 			  <span class="input-group-text"><i class="fas fa-clipboard"></i></span>
-			  <textarea class="form-control"  name="v_con" rows="20" placeholder="글 상세내용...."></textarea>
-			</div>	
-			
+			  <textarea class="form-control"  name="itemnum" rows="20" placeholder="아이탬번호"></textarea>
+			</div>			
 			
 <!-- 			<div class="input-group mb-3"> -->
 <!-- 			    <div class="input-group-text"><i class="fas fa-clipboard"></i></div> -->
