@@ -1,0 +1,96 @@
+*{
+	margin:0;
+	padding:0;
+}
+#user{	
+width:35px;
+  border: 1px solid blue; 
+ float: right; 
+ width: 5%;
+	
+}
+   .container {
+	/* width: 1000px; */
+ 	 width: 100%;
+    height: 150%;
+    text-align: -webkit-center;
+    display: block;
+     animation: 0.4s ease-in-out 0s 1 normal forwards running slide; 
+}
+.form-control{
+  border: 1px solid blue; 
+ float: left; 
+ width: 12%;
+		
+	
+}
+
+#list {
+	width: 1000px;
+	height: 600px;
+	padding: 15px;
+	overflow: auto;
+	border: 1px solid black;
+	
+}
+ .body{
+	width:80%;
+	height:2000px;
+	border:1px solid black;
+	position:relative;
+	align: center;	
+}  
+/* .chat-inlineBlock{
+    width: 100%;
+    max-width:880px;
+} */
+#btn-submit{
+   /*  background: white; */
+    background: #ebce10;
+    width:140px;
+    height:40px;
+    font-size: 25px;
+    /* color:#607080; */
+    padding: 0px 10px;
+    border:none;
+    
+}
+#msg{
+    width: 83%;
+    height: 40px;
+    border: none;
+    padding: 0px 10px;
+    font-size: 22px;
+   border: 1px solid black;
+ 	/*  border-bottom-right-radius : 200px;
+ 	 border-bottom-left-radius : 300px; */
+}
+#top-c{
+    width: 20px;
+    float: left;
+    width: 30%;
+}
+#btnConnect{
+	 width:35px;
+  border: 1px solid blue; 
+ float: right; 
+ width: 5%;
+}
+#btnDisconnect{
+ width:35px;
+  border: 1px solid blue; 
+ float: right; 
+ width: 5%;
+}
+#bar-a{
+	width: 1000px;
+	height: 30px;
+	padding: 15px;
+	border: 1px solid black;
+	
+}
+
+
+
+
+
