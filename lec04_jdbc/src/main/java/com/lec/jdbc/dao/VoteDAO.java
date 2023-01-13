@@ -27,13 +27,14 @@ public class VoteDAO {
 	private String insert_voteitem = "insert into voteitem(listnum, itemnum, item) values(?,?,?)";
 	private String get_pageinfo = "select count(*) from vote";
 	private String get_vote = "select * from vote where id=?";
-	private String get_vote_list = "select * from vote order by id desc limit ?, ?";
+	private String get_vote_list = "select * from vote, voteitem order by id desc limit ?, ?";	
 //	private String get_vote_vote = "update vote set v_count1=? where v_id=? and v_item=?";
 	
 	public List<VoteVO> getVoteList(int currentPage, int perPage) {
 		Object[] args = {(currentPage-1)*perPage, perPage};
 		return jdbcTemplate.query(get_vote_list, args, new VoteRowMapper());
 	}
+	
 	public VoteVO getVote(VoteVO vote) {
 		Object[] args = {vote.getId() };
 		return jdbcTemplate.queryForObject(get_vote, args, new VoteRowMapper());
