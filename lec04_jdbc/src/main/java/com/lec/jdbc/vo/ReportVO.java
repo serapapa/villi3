@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class ReportVO {
 
-	private int r_id;
+	private int r_seq;
     private String r_status;
     private String r_rs1;
     private String r_rs2;
@@ -16,11 +16,11 @@ public class ReportVO {
 	private String title;
 	
 
-	public int getR_id() {
-		return r_id;
+	public int getR_seq() {
+		return r_seq;
 	}
-	public void setR_id(int r_id) {
-		this.r_id = r_id;
+	public void setR_seq(int r_seq) {
+		this.r_seq = r_seq;
 	}
 	public String getR_status() {
 		return r_status;
@@ -78,7 +78,7 @@ public class ReportVO {
 	}
 	@Override
 	public String toString() {
-		return "ReportVO [r_id=" + r_id + ", r_status=" + r_status + ", r_rs1=" + r_rs1 + ", r_rs2=" + r_rs2
+		return "ReportVO [r_seq=" + r_seq + ", r_status=" + r_status + ", r_rs1=" + r_rs1 + ", r_rs2=" + r_rs2
 				+ ", r_rs3=" + r_rs3 + ", r_con=" + r_con + ", r_time=" + r_time + ", r_e_time=" + r_e_time + ", seq="
 				+ seq + ", title=" + title + "]";
 	}

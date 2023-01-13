@@ -14,7 +14,7 @@ public class ReportRowMapper implements RowMapper<ReportVO> {
 	@Override
 	public ReportVO mapRow(ResultSet rs, int rowNum) throws SQLException {
 		ReportVO report = new ReportVO();
-		report.setR_id(rs.getInt("R_ID"));
+		report.setR_seq(rs.getInt("R_SEQ"));
 		report.setR_status(rs.getString("R_STATUS"));
 		report.setR_rs1(rs.getString("R_RS1"));
 		report.setR_rs2(rs.getString("R_RS2"));

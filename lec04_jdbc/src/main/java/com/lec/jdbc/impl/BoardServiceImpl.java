@@ -3,19 +3,14 @@ package com.lec.jdbc.impl;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
-
 import com.lec.jdbc.commom.SearchVO;
 import com.lec.jdbc.dao.BoardDAO;
-import com.lec.jdbc.dao.BoardDAO;
 import com.lec.jdbc.service.BoardService;
-import com.lec.jdbc.vo.BoardVO;
-import com.lec.jdbc.vo.PageInfo;
 import com.lec.jdbc.vo.BoardVO;
 
 @Service("boardService")

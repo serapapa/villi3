@@ -23,15 +23,11 @@
     </div>
   </div>
 </header>
-
-
-
-
 	  <div class="container" >
 		<div class="border-bottom border-dark border-top border-dark mt-4 p-3 " align="center">
 			<h4>"게시글"을 신고하는 이유를 선택해주세요</h4>	
 		</div>
-	</div> 
+	  </div> 
 	<form action="insertReport.do" method="post">
 		<div class="container px-9">
 		  <div class="row gx-4">
@@ -71,35 +67,29 @@
 			  <option value="게시글을 잘못올렸어요">게시글을 잘못올렸어요</option>
 			  <option value="거래 / 환불분쟁">거래 / 환불분쟁</option>
 			  <option value="기타">기타</option>
-	     </select>
-	     
+	     </select>    
 			<div class="input-group mb-3">
 			  <span class="input-group-text"><i class="fas fa-clipboard"></i></span>
 			  <textarea class="form-control"  name="r_con" id="r_con" rows="20" placeholder="구체적인 사항을 적어주세요"></textarea>
 			</div>	
-			
-			<div class="input-group mb-3">
-			    <div class="input-group-text"><i class="fas fa-lock"></i></div>
-				<input type="password" name="r_id" class="form-control" id="r_id" required placeholder="글번호를 입력해주세요">
-			</div>
-			
-			
+					<div class="input-group mb-3">
+				      <c:forEach  var="board" items="${ boardList }">
+						<input type="number" name="r_seq" class="form-control" id="r_seq" value="${ board.seq }">
+					  </c:forEach>
+					</div>
 			 <div class="input-group input-group-lg mt-5 mb-5">
 			  <input type="submit" class="form-control btn btn-primary"  onclick="insertReport()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" value=" 신고하기 ">
 			</div>
-	    
 	      </div>
 	     </div>
 	   </div>
 	</form>		
-	
-	
     	<script>
 		function insertReport() {
 			if(confirm("게시물을 신고하시겠습니까?")) {
 		    	self.location.href = "report_insert";
 		    }
 		}
-	</script>
+	   </script>
 </body>
 </html>   

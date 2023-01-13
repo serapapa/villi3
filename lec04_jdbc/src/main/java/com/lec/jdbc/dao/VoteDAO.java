@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import com.lec.jdbc.commom.SearchVO;
 import com.lec.jdbc.mapper.VoteRowMapper;
-import com.lec.jdbc.vo.BoardVO;
 import com.lec.jdbc.vo.PageInfo;
 import com.lec.jdbc.vo.VoteVO;
 
@@ -27,7 +26,7 @@ public class VoteDAO {
 	private String insert_voteitem = "insert into voteitem(listnum, itemnum, item) values(?,?,?)";
 	private String get_pageinfo = "select count(*) from vote";
 	private String get_vote = "select * from vote where id=?";
-	private String get_vote_list = "select * from vote, voteitem order by id desc limit ?, ?";	
+	private String get_vote_list = "select * from vote, voteitem group by id desc limit ?, ?";	
 //	private String get_vote_vote = "update vote set v_count1=? where v_id=? and v_item=?";
 	
 	public List<VoteVO> getVoteList(int currentPage, int perPage) {

@@ -23,10 +23,10 @@ public class ReportDAO {
 	private JdbcTemplate jdbcTemplate;
 	
 	private String sql = "";
-	private String insert_report = "insert into report(r_id, r_rs1, r_rs2, r_rs3, r_con, r_time) values(?,?,?,?,?,now())";
+	private String insert_report = "insert into report(r_seq, r_rs1, r_rs2, r_rs3, r_con, r_time) values(?,?,?,?,?,now())";
 	private String get_pageinfo = "select count(*) from report";
-	private String get_report = "select * from report where r_id=?";
-	private String get_report_list = "select * from report order by r_id desc limit ?, ?";
+	private String get_report = "select * from report where r_seq=?";
+	private String get_report_list = "select * from report order by r_seq desc limit ?, ?";
 //	SELECT * FROM report , board WHERE board.seq = report.R_ID;
 //	SELECT b.seq, b.writer, b.title, b.content, b.filename1, b.filename2, b.filename3, r.R_TIME, r.R_RS1, r.R_RS2, r.R_RS3 ,r.R_CON, r.R_STATUS
 //	  FROM report R, board b
@@ -38,7 +38,7 @@ public class ReportDAO {
 		return jdbcTemplate.query(get_report_list, args, new ReportRowMapper());
 	}
 	public ReportVO getReport(ReportVO report) {
-		Object[] args = {report.getR_id() };
+		Object[] args = {report.getR_seq() };
 		return jdbcTemplate.queryForObject(get_report, args, new ReportRowMapper());
 	}
 
@@ -75,7 +75,7 @@ public PageInfo getPageInfo(String tableName, int currentPage, int perPage) {
 		return pageInfo;
 	}
 	public int insertReport(ReportVO report) {
-		return jdbcTemplate.update(insert_report, report.getR_id(), report.getR_rs1(), report.getR_rs2(), report.getR_rs3(), report.getR_con());
+		return jdbcTemplate.update(insert_report, report.getR_seq(), report.getR_rs1(), report.getR_rs2(), report.getR_rs3(), report.getR_con());
 	}
 	public int getTotalRowCount(SearchVO searchVO) {
 		sql = "select count(*) from report where 1 = 1 "

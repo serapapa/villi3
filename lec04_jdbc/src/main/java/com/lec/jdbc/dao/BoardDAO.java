@@ -70,8 +70,8 @@ public class BoardDAO {
 				sql = get_pageinfo + " and title like '%" + searchVO.getSearchWord() + "%'";
 			} else if(searchVO.getSearchType().equalsIgnoreCase("writer")) {
 				sql = get_pageinfo + " and writer like '%" + searchVO.getSearchWord() + "%'";
-			} else if(searchVO.getSearchType().equalsIgnoreCase("cate")) {
-				sql = get_pageinfo + " and cate like '%" + searchVO.getSearchWord() + "%'";
+			} else if(searchVO.getSearchType().equalsIgnoreCase("cate2")) {
+				sql = get_pageinfo + " and cate2 like '%" + searchVO.getSearchWord() + "%'";
 			}	
 		}
 		return jdbcTemplate.queryForInt(sql);
@@ -88,7 +88,7 @@ public class BoardDAO {
 				sql = selectBoardListByTitle;
 			} else if(searchVO.getSearchType().equalsIgnoreCase("writer")) {
 				sql = selectBoardListByWriter;
-			} else if(searchVO.getSearchType().equalsIgnoreCase("cate")) {
+			} else if(searchVO.getSearchType().equalsIgnoreCase("cate2")) {
 				sql = selectBoardListByCate;
 			} 					
 		}
@@ -100,7 +100,7 @@ public class BoardDAO {
 
 	public int insertBoard(BoardVO board) {
 		return jdbcTemplate.update(insert_board, board.getTitle(), board.getWriter(), board.getContent(), board.getFileName1(),board.getFileName2()
-				                   ,board.getFileName3(), board.getFileName4(), board.getFileName5(), board.getCate(), board.getCate2());
+				                   ,board.getFileName3(), board.getFileName4(), board.getFileName5(), board.getCate2());
 	}
 
 	public int deleteBoard(BoardVO board) {

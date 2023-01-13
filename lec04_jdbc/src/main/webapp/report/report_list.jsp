@@ -27,11 +27,7 @@
 		</div>
 	</div>	
 </header>
-
-
-
-
-<div class="container mt-3">		
+    <div class="container mt-3">		
 		<div class="row mt-4">
 			<table class="table table-hover table-bordered">
 				<thead class="table-dark">
@@ -47,14 +43,14 @@
 				<tbody>
 				<c:forEach  var="report" items="${ reportList }">
 					<tr>
-						<td scope="row"><a href="updateReport.do?id=${ report.getR_id() }">${ report.getR_id() }</a></td>
+						<td scope="row"><a href="updateReport.do?r_seq=${ report.getR_seq() }">${ report.getR_seq() }</a></td>
 						<td>${ report.r_rs1 }</td>
 						<td>${ report.r_rs2 }</td>
 						<td>${ report.r_rs3 }</td>
 						<td>${ report.getR_con() }</td>
 						<td>${ report.getR_time() }</td>
 						<td>${ report.getR_status() }</td>
-						<td align="center"><a href="deleteReport.do?id=${ report.getR_id() }" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
+						<td align="center"><a href="deleteReport.do?seq=${ report.getR_seq() }" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
 					</tr>
 				</c:forEach>				
 				</tbody>

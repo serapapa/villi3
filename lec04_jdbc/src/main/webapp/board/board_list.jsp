@@ -24,31 +24,32 @@
 }
 
 body{
-font-family: 'Pretendard-Regular';}
+font-family: 'Pretendard-Regular';
+
+}
+
+header{
+    background-color: #FDF5E6;
+}
+
 
 </style>
 </head>
 <body>
                   <!-- ===========header================ -->
- <header class= "border-bottom border-dark">
+ <header>
 	<div class="container">
-		<div class="row align-items-start mt-3 p-3 opacity-100">
-		  <div class="col mt-2"><a href="#"><i class="fas fa-calendar fa-3x text-dark"></i></a></div>
-		  <div class="col" align="center"><a href="getBoardList.do"><img src="resources/images/logo.png" alt="logo" width=90px height=90px ></a></div>
+		<div class="row align-items-start p-3">
+		  <div class="col mt-2"><a href="#"><i class="fas fa-calendar fa-2x text-dark"></i></a></div>
+		  <div class="col" align="center"><a href="getBoardList.do"><img src="resources/images/logo.png" alt="logo" width=70px height=70px ></a></div>
 		  
-		  <div class="col mt-2 text-end"><a href="#"><i class="fas fa-heart fa-3x text-dark"></i></a>
-		  <span class="mx-4"><a href="getUserList.do"><i class="fas fa-user fa-3x text-dark"></i></a></span>
-		  <span><a href="#"><i class="fas fa-search fa-3x text-dark" ></i></a></span>					
+		  <div class="col mt-2 text-end"><a href="#"><i class="fas fa-heart fa-2x text-dark"></i></a>
+		  <span class="mx-4"><a href="getUserList.do"><i class="fas fa-user fa-2x text-dark"></i></a></span>
+		  <span><a href="#"><i class="fas fa-search fa-2x text-dark" ></i></a></span>					
 		  </div>
 		</div>
 	</div>	
 </header>
-
-
-
-		                    
-
-
                   <!-- ============banner=============== -->
   
   <div id="carouselExampleControls" class="carousel carousel-dark slide border-bottom border-dark" data-bs-ride="carousel" align="center">
@@ -63,7 +64,7 @@ font-family: 'Pretendard-Regular';}
 				          <img src="resources/images/1.png"   class="d-block w-50 card-img-top embed-responsive-item" alt="banner1" width="300" height="600">
 				        </div>
 					    <div class="carousel-item embed-responsive embed-responsive-4by3">
-					      <img src="resources/images/2.png" class="d-block w-50 card-img-top embed-responsive-item" alt="banner2" width="300" height="600">
+					      <img src="resources/images/22.png" class="d-block w-50 card-img-top embed-responsive-item" alt="banner2" width="300" height="600">
 					    </div>
 					    <div class="carousel-item embed-responsive embed-responsive-4by3">
 				          <img src="resources/images/3.png" class="d-block w-50 card-img-top embed-responsive-item" alt="banner3" width="300" height="600">
@@ -78,7 +79,7 @@ font-family: 'Pretendard-Regular';}
 
 		 <nav class="navbar navbar-expand-lg navbar-light">
 		   <div class="container-fluid">
-		    <a class="navbar-brand" href="#">Navbar</a>
+		    <a class="navbar-brand" href="#">Villi</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -88,6 +89,15 @@ font-family: 'Pretendard-Regular';}
 		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 		        <li class="nav-item">
 		          <a class="nav-link active" aria-current="page" href="board/board_insert.jsp">글작성</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" aria-current="page" href="getQuestionList.do">우리동네질문</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" aria-current="page" href="board/board_insert.jsp">동네분실센터</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" aria-current="page" href="board/board_insert.jsp">동네모임</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" href="getVoteList.do">동네투표</a>
@@ -103,7 +113,7 @@ font-family: 'Pretendard-Regular';}
 				    	<option value="">검색</option>		
 				    	<option value="title" ${searchVO.getSearchType()=="title" ? "selected" : ""}>제목</option>							
 				    	<option value="writer" ${searchVO.getSearchType()=="writer" ? "selected" : "" }>작성자</option>							
-				    	<option value="cate" ${searchVO.getSearchType()=="cate" ? "selected" : ""}>카테고리</option>										
+				    	<option value="cate2" ${searchVO.getSearchType()=="cate2" ? "selected" : ""}>카테고리</option>										
 					</select>
 				    </div>
 				    <div class="col col-lg-6">
@@ -151,23 +161,22 @@ font-family: 'Pretendard-Regular';}
 				 
 				 <div class="badge text-wrap" style="width: 20rem;">
 				   <a href="getBoard.do?seq=${board.seq}" style="text-decoration:none">
-				    <div class="fs-3">(${board.cate})${board.title}</div>
+				    <p class="fs-4">(${board.cate})${board.title}</p>
 				   </a> 
-                 </div>	   
-	            <div class="container">
-	                 <div class="row justify-content-md-center">
-					    <div class="col-md-auto">
-					      작성자 : ${board.writer}
-					    </div>
-					    
-					    <div class="col-md-auto bg-success text-white">
-					      ${board.status}
+                 </div>
+		            <div class="container">
+		                 <div class="row justify-content-md-center">
+						    <div class="col-md-auto">
+						      작성자 : ${board.writer}
+						    </div>
+						    					    
+						    <div class="col-md-auto bg-success text-white">
+						      ${board.status}
+						    </div>
 					    </div>
 				    </div>
-			    </div>
 			     <p class="fs-6">등록일 : ${board.regDate}</p>
-		        </td>
-		        
+		        </td>      
 		    <c:if test="${i%j == j-1}">
 		     </tr>
 		    </c:if> 
